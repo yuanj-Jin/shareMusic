@@ -1,0 +1,8 @@
+
+# will inject 'application' namespace in bootstrap phase
+#apollo.bootstrap.enabled = true
+# put apollo initialization before logging system initialization
+spring:
+  profiles:
+    active: dev
+#apollo.bootstrap.eagerLoad.enabled=true

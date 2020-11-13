@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yuanj.sharemusic.mapper.SongMapper">
+
+    <select id="querySongs" resultType="com.yuanj.sharemusic.bean.SongVO">
+        select
+            ID AS id,
+            SONG_TITLE AS songTitle
+        from sm.song
+    </select>
+</mapper>
