@@ -7,7 +7,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/sm?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://193.112.152.51:3306/sm?serverTimezone=Asia/Shanghai
     username: root
     password: yuanjing
   rabbitmq:
@@ -22,6 +22,7 @@ spring:
           enabled: true
           max-attempts: 5
           initial-interval: 3000
-
+  redis:
+    host: 193.112.152.51
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
