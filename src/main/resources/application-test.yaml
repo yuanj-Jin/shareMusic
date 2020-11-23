@@ -1,6 +1,28 @@
 server:
-  port: 5261
+  port: 5260
 # will inject 'application' namespace in bootstrap phase
 #apollo.bootstrap.enabled = true
 # put apollo initialization before logging system initialization
 #apollo.bootstrap.eagerLoad.enabled=true
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://193.112.152.51:3306/sm?serverTimezone=Asia/Shanghai
+    username: root
+    password: yuanjing
+  rabbitmq:
+    addresses: 193.112.152.51
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /sm
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 5
+          initial-interval: 3000
+  redis:
+    host: 193.112.152.51
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml

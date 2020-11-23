@@ -4,5 +4,5 @@
 # put apollo initialization before logging system initialization
 spring:
   profiles:
-    active: dev
+    active: test
 #apollo.bootstrap.eagerLoad.enabled=true
