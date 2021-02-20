@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 /**
  * 消费者
  */
-@Component
-@RabbitListener(queuesToDeclare = @Queue(value = "su",durable = "false",autoDelete = "false"))
+//@Component
+//@RabbitListener(queuesToDeclare = @Queue(value = "su",durable = "false",autoDelete = "false"))
 public class RabbitConsumer {
 
-    @RabbitHandler
+//    @RabbitHandler
     public void receive(String msg) {
         System.out.println(msg);
     }

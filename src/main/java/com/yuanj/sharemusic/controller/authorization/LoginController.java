@@ -11,13 +11,14 @@ public class LoginController {
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(){
-
         return "success";
     }
 
     @ResponseBody
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     public String test(){
+        System.out.println("test");
+        int i=1/0;
         return "success";
     }
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <script src="../static/jquery.js"></script>
+    <title>Confess</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div>
+    <div id="name">
+        <h6 size="3">Are you LeYi Chen?</h6><br>
+        <button onclick="fnyes()">Yes</button><button id="no" onclick="fnChoose()">No</button>
+    </div>
+
+    <div id="something" style="display: none;">
+        <h6 size="3">I wanna tell you a word.</h6><br>
+        <button onclick="fnEmm()">Emm...</button><button id="sorry" onclick="fnChoose()">Sorry,I dont wanna listen.</button>
+    </div>
+
+    <div id="thing" style="display: none;">
+        <h6>If I were a tree, I must plant in your hand.</h6><br>
+        <button onclick="fnNo()">because</button><button id="need" onclick="fnChoose()">no need</button>
+    </div>
+
+    <div id="after" style="display: none;">
+        <h6>you are soil!!!</h6><br>
+        <button onclick="fnRote()">ToShow...</button>
+        <button onclick="fnConfession()">ToConfession...</button>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+    function fnyes(){
+        $("#something").show()
+        $("#no").attr("disabled",true)
+    }
+    function fnEmm(){
+        $("#thing").show()
+        $("#sorry").attr("disabled",true)
+    }
+    function fnNo(){
+        $("#after").show()
+        $("#need").attr("disabled",true)
+    }
+    function fnChoose(){
+        alert("选旁边那个")
+    }
+    function fnRote(){
+        window.location.href="http://47.102.223.25:5260/qr/toRote";
+        // window.location.href="http://localhost:5260/qr/toRote";
+    }
+    function fnConfession(){
+        window.location.href="http://47.102.223.25:5260/qr/toConfess";
+        // window.location.href="http://localhost:5260/qr/toConfess";
+    }
+
+
+    function fnAjax() {
+        $.ajax({
+            //请求方式
+            type : "GET",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "http://47.102.223.25:5260/qr/toRote",
+            // url : "http://localhost:5260/qr/toRote",
+            //数据，json字符串
+            data : JSON.stringify(null),
+            //请求成功
+            success : function(result) {
+                window.location.href="http://47.102.223.25:5260/qr/toRote";
+                // window.location.href="http://localhost:5260/qr/toRote";
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+    }
+
+</script>
+</html>
