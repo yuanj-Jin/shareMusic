@@ -17,7 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <rabbitmq.version>5.8.0</rabbitmq.version>
+        <rabbitmq.version>5.18.0</rabbitmq.version>
         <mybatis.version>2.0.0</mybatis.version>
         <mysql.version>8.0.20</mysql.version>
         <fastjson.version>1.2.70</fastjson.version>
